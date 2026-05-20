@@ -3,8 +3,6 @@ name = "poetry-monorepo-root"
 version = "0.1.0"
 description = "Root workspace — coordinates sub-poetry-projects in packages/service-a and packages/service-b. Not an installable package itself."
 authors = ["mend-detection-qa"]
-package-mode = false
-
 [tool.poetry.dependencies]
 python = "^3.10"
 requests = "^2.31"
