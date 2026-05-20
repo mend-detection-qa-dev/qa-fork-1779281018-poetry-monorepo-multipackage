@@ -1,0 +1,23 @@
+{
+  "repoUrl": "https://github.com/mend-detection-qa/poetry-monorepo-multipackage",
+  "tests": [
+    {
+      "check_name": "total_dependencies_count",
+      "check_type": "FLEXIBLE",
+      "expected_value": 15,
+      "description": "All deps from both sub-packages: requests, httpx, flask, click + transitives"
+    },
+    {
+      "check_name": "direct_dependencies_names_list",
+      "check_type": "FLEXIBLE",
+      "expected_value": ["requests", "httpx", "flask", "click"],
+      "description": "Direct deps from service-a (requests, httpx) and service-b (flask, click) must all be discovered"
+    },
+    {
+      "check_name": "transitive_dependencies_names_list",
+      "check_type": "FLEXIBLE",
+      "expected_value": ["certifi", "chardet", "idna", "urllib3", "httpcore", "anyio", "blinker", "itsdangerous", "jinja2", "markupsafe", "werkzeug"],
+      "description": "All transitives from the merged multi-package dep tree"
+    }
+  ]
+}
